@@ -1,0 +1,17 @@
+---
+labels: ['wrm-service', 'express', 'server', 'mongodb', 'survey']
+description: 'REST service of the Survey Group Work Request Manager — SR numbering, files, automation, reports, Excel export and backup.'
+---
+
+Stores Work Requests in MongoDB (`MONGO_URL`). Numbers are allocated atomically per year as `SR-01-2026`, `SR-02-2026`…
+Files are versioned and organised as `Archives/<year>/<number>/<category>/`. A daily job updates statuses and snapshots stats.
+
+Main endpoints (under `/api`): `requests`, `requests/:id/files`, `dashboard`, `reports/monthly`, `reports/daily`,
+`automation/run`, `export/excel`, `export/csv`, `backup`, `restore`, `settings`.
+
+```ts
+import { formatNumber } from '@subtopo-geo/survey-group.wrm-service';
+formatNumber(3, 2026); // "SR-03-2026"
+```
+
+Run it through the platform: `bit run wrm-platform`.

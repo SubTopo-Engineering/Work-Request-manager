@@ -1,0 +1,18 @@
+---
+title: Work Request Manager App
+description: 'Survey Group web app to receive, OCR, track, archive and report topographic work requests.'
+labels: ['app', 'react', 'survey', 'ocr']
+---
+
+Frontend of the Survey Group Work Request Manager. Pages: Accueil (dashboard), Nouvelle demande (scan import + OCR auto-fill),
+Archive (search), fiche demande (files, Raw/Final Data, history), Rapports (daily / monthly), Export Excel/CSV, Sauvegarde, Paramètres.
+
+## Run
+
+The app is composed by the platform — run `bit run wrm-platform`. The API base is read from `process.env.BACKEND_URL`.
+
+```tsx
+import { WrmApp } from '@subtopo-geo/survey-group.wrm-app';
+
+<BrowserRouter><WrmApp /></BrowserRouter>
+```
